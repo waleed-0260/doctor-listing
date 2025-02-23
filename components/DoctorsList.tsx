@@ -15,6 +15,7 @@ interface DoctorsListProps {
 }
 
 const DoctorsList: React.FC<DoctorsListProps> = ({ users }) => {
+  console.log("check users in list", users)
   const [filteredUsers, setFilteredUsers] = useState<Doctor[]>(users);
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("");
