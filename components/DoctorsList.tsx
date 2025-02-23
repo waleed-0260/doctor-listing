@@ -20,7 +20,7 @@ const DoctorsList: React.FC<DoctorsListProps> = ({ users }) => {
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  // Filtering logic
+  // Filtering the doctors based on their specialty and city
   useEffect(() => {
     let filtered = users;
 
