@@ -6,7 +6,7 @@ export async function GET(req: Request) {
   try {
     // Ensure MongoDB connection
     if (!mongoose.connections[0].readyState) {
-      await mongoose.connect(process.env.MONGODB_URI as string);
+      await mongoose.connect("mongodb+srv://muhammadwaleedahsan43:KZluDga25Rb3vy5H@cluster0.lri4a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     }
 
     // Fetch filtered users from MongoDB

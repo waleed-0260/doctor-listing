@@ -5,7 +5,7 @@ import User from "@/models/doctors"; // Ensure correct model path
 export async function GET(req, context) {
   try {
     if (!mongoose.connections[0].readyState) {
-      await mongoose.connect(process.env.MONGODB_URI);
+      await mongoose.connect("mongodb+srv://muhammadwaleedahsan43:KZluDga25Rb3vy5H@cluster0.lri4a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     }
 
     const { id } = context.params;
