@@ -9,18 +9,6 @@ export async function GET(req: Request) {
       await mongoose.connect(process.env.MONGODB_URI as string);
     }
 
-    // Extract search parameters from request URL
-    const { searchParams } = new URL(req.url);
-    const name = searchParams.get("name");
-    const city = searchParams.get("city");
-    const specialty = searchParams.get("specialty");
-
-    // Build query object dynamically
-    const filter: any = {};
-    if (name) filter.name = { $regex: name, $options: "i" }; // Case-insensitive search
-    if (city) filter.city = { $regex: city, $options: "i" };
-    if (specialty) filter.specialty = { $regex: specialty, $options: "i" };
-
     // Fetch filtered users from MongoDB
     const users = await User.find();
 
